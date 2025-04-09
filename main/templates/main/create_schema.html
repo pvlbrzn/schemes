@@ -1,0 +1,13 @@
+<h1>Создание схемы</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ formset.management_form }}
+    {% for form in formset %}
+        <div class="form-row">
+            {{ form.as_p }}
+        </div>
+    {% endfor %}
+    <button type="submit">Сохранить</button>
+</form>
